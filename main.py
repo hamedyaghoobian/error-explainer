@@ -12,14 +12,13 @@ controller = Controller()
 # OLLAMA endpoint and configuration for explaining coding errors
 OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 OLLAMA_CONFIG = {
-    "model": "mistral:7b-instruct-v0.2-q4_K_S",  # Assuming a model suitable for explaining coding errors
+    "model": "codellama",  #  A large language model that can use text prompts to generate and discuss code. 
     "keep_alive": "5m",
     "stream": False,
 }
 
 # Template for the OLLAMA prompt to explain coding errors
 PROMPT_TEMPLATE = """Explain the following coding error in detail:
-
 $error
 """
 
@@ -81,4 +80,5 @@ listener_thread.start()
 
 # Start the tkinter event loop
 root.mainloop()
+
 
